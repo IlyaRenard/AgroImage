@@ -28,7 +28,7 @@ const About = () => {
       <h1 className=" text-2xl border-b-2 text-center">
         О КОМПАНИИ «АгроЛайф»
       </h1>
-      <div className="flex flex-row justify-around mt-5">
+      <div className="flex flex-row mt-5">
         <div className=" border-r-2">
           <ul className=" ml-3 min-w-[150px] flex flex-col ">
             <li className="md:ml-8 text-xl md:my-0 my-7">
@@ -141,13 +141,27 @@ const About = () => {
           )}
           {contacts && (
             <div id="contacts">
+              <h1 className="  text-2xl text-center">Как с нами связаться?</h1>
+              <p className="indent-8 mb-3 text-left">
+                Адрес: Республика Беларусь, 230003, г. Гродно, ул. Понемуньская
+                20, каб. 22, 23, 27-29
+              </p>
               <p className=" indent-8 mb-3 text-left">
-                КАК С НАМИ СВЯЗАТЬСЯ? Адрес: Республика Беларусь, 230003, г.
-                Гродно, ул. Понемуньская 20, каб. 22, 23, 27-29 Директор, Довбаш
-                Светлана Михайловна: +375 (44) 592-26-22, +375 (29) 234-55-65
-                Рабочий тел: 80152 68-30-94 Специалисты: Катковский Дмитрий +375
-                (29) 3977553, Совца Олег +375 (29) 6673510 Юр. отдел: +375 (29)
-                630-59-49 По Минской области: +375 (44) 538-48-65
+                Директор, Довбаш Светлана Михайловна: +375 (44) 592-26-22, +375
+                (29) 234-55-65
+              </p>
+              <p className=" indent-8 mb-3 text-left">
+                Рабочий тел: 80152 68-30-94
+              </p>
+              <p className=" indent-8 mb-3 text-left">
+                Специалисты: Катковский Дмитрий +375 (29) 3977553, Совца Олег
+                +375 (29) 6673510
+              </p>
+              <p className=" indent-8 mb-3 text-left">
+                Юр. отдел: +375 (29) 630-59-49
+              </p>
+              <p className=" indent-8 mb-3 text-left">
+                По Минской области: +375 (44) 538-48-65
               </p>
             </div>
           )}

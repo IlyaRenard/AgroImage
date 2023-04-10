@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Products = () => {
-
-
   return (
     <div>
       <div className="flex flex-row justify-around mt-5">

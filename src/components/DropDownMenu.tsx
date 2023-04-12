@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { category } from "../data/category";
+import React, { FC, useState } from "react";
+import { ICategory } from "../models/product";
 
-const DropDownMenu = () => {
-  const [categorys, setCategorys] = useState(category);
+interface DropDownMenuProps {
+  category:ICategory;
+}
 
+const DropDownMenu:FC<DropDownMenuProps> = ({category}) => {
+ /*  const [categorys, setCategorys] = useState<ICategory>({
+    category: "",
+    subCategory: [],
+  });
+ */
   const [open, setOpen] = useState(false);
 
   const clickHandler = () => {
@@ -12,27 +19,25 @@ const DropDownMenu = () => {
 
   return (
     <div>
-      {categorys.map((category) => (
-        <ul className="flex flex-col mr-4">
-          <li>
-            <a
-              onClick={clickHandler}
-              className="text-xl cursor-pointer hover:font-bold "
-            >
-              {category.category}
-            </a>
-            {open && (
-              <ul>
-                {category.value.map((value) => (
-                  <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer">
-                    {value}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        </ul>
-      ))}
+      <ul className="flex flex-col mr-4">
+        <li>
+          <a
+            onClick={clickHandler}
+            className="text-xl cursor-pointer hover:font-bold "
+          >
+            {category.category}
+          </a>
+          {open && (
+            <ul>
+              {category.subCategory.map((value) => (
+                <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer">
+                  {value}
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      </ul>
     </div>
   );
 };

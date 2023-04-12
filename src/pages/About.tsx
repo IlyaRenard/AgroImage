@@ -141,28 +141,32 @@ const About = () => {
           )}
           {contacts && (
             <div id="contacts">
-              <h1 className="  text-2xl text-center">Как с нами связаться?</h1>
-              <p className="indent-8 mb-3 text-left">
-                Адрес: Республика Беларусь, 230003, г. Гродно, ул. Понемуньская
-                20, каб. 22, 23, 27-29
-              </p>
-              <p className=" indent-8 mb-3 text-left">
-                Директор, Довбаш Светлана Михайловна: +375 (44) 592-26-22, +375
-                (29) 234-55-65
-              </p>
-              <p className=" indent-8 mb-3 text-left">
-                Рабочий тел: 80152 68-30-94
-              </p>
-              <p className=" indent-8 mb-3 text-left">
-                Специалисты: Катковский Дмитрий +375 (29) 3977553, Совца Олег
-                +375 (29) 6673510
-              </p>
-              <p className=" indent-8 mb-3 text-left">
-                Юр. отдел: +375 (29) 630-59-49
-              </p>
-              <p className=" indent-8 mb-3 text-left">
-                По Минской области: +375 (44) 538-48-65
-              </p>
+              <div>
+                <h1 className="  text-2xl text-center">
+                  Как с нами связаться?
+                </h1>
+                <p className="indent-8 mb-3 text-left">
+                  Адрес: Республика Беларусь, 230003, г. Гродно, ул.
+                  Понемуньская 20, каб. 22, 23, 27-29
+                </p>
+                <p className=" indent-8 mb-3 text-left">
+                  Директор, Довбаш Светлана Михайловна: +375 (44) 592-26-22,
+                  +375 (29) 234-55-65
+                </p>
+                <p className=" indent-8 mb-3 text-left">
+                  Рабочий тел: 80152 68-30-94
+                </p>
+                <p className=" indent-8 mb-3 text-left">
+                  Специалисты: Катковский Дмитрий +375 (29) 3977553, Совца Олег
+                  +375 (29) 6673510
+                </p>
+                <p className=" indent-8 mb-3 text-left">
+                  Юр. отдел: +375 (29) 630-59-49
+                </p>
+                <p className=" indent-8 mb-3 text-left">
+                  По Минской области: +375 (44) 538-48-65
+                </p>
+              </div>
             </div>
           )}
         </div>

@@ -6,11 +6,7 @@ interface DropDownMenuProps {
 }
 
 const DropDownMenu:FC<DropDownMenuProps> = ({category}) => {
- /*  const [categorys, setCategorys] = useState<ICategory>({
-    category: "",
-    subCategory: [],
-  });
- */
+
   const [open, setOpen] = useState(false);
 
   const clickHandler = () => {

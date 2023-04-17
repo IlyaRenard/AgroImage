@@ -2,11 +2,10 @@ import React, { FC, useState } from "react";
 import { ICategory } from "../models/product";
 
 interface DropDownMenuProps {
-  category:ICategory;
+  category: ICategory;
 }
 
-const DropDownMenu:FC<DropDownMenuProps> = ({category}) => {
-
+const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
   const [open, setOpen] = useState(false);
 
   const clickHandler = () => {
@@ -18,6 +17,7 @@ const DropDownMenu:FC<DropDownMenuProps> = ({category}) => {
       <ul className="flex flex-col mr-4">
         <li>
           <a
+            href="/"
             onClick={clickHandler}
             className="text-xl cursor-pointer hover:font-bold "
           >
@@ -25,7 +25,7 @@ const DropDownMenu:FC<DropDownMenuProps> = ({category}) => {
           </a>
           {open && (
             <ul>
-              {category.subCategory.map((value) => (
+              {category.subCategory?.map((value) => (
                 <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer">
                   {value}
                 </li>

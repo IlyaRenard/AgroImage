@@ -8,5 +8,6 @@ export interface IProduct {
 
 export interface ICategory {
     category: string;
-    subCategory: string[]
+    subCategory?: string[];
+    img?: string;
 }

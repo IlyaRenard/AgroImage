@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Modal from "../components/Modal";
+import FeedBackForm from "../components/FeedBackForm";
 
 const About = () => {
   const [company, setCompany] = useState(true);
@@ -137,6 +139,8 @@ const About = () => {
                   По Минской области: +375 (44) 538-48-65
                 </p>
               </div>
+              <div className="ml-8"> <Modal title="Обратная связь" btnText="Напишите нам"><FeedBackForm /> </Modal> </div>
+              
             </div>
           )}
         </div>

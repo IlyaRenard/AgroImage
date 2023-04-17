@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonIcon } from "react-ion-icon";
+import {IonIcon} from "react-ion-icon";
 
 const Header = () => {
   const links = [

@@ -1,7 +1,12 @@
-import React, { useState } from "react";
 import DropDownMenu from "../components/DropDownMenu";
-import { cereals, corn, herbs, rapeseed, soya } from "../data/category";
-import FeedBackForm from "../components/FeedBackForm";
+import {
+  cereals,
+  corn,
+  fertilizer,
+  herbs,
+  rapeseed,
+  soya,
+} from "../data/category";
 
 const Products = () => {
   return (
@@ -14,6 +19,7 @@ const Products = () => {
           <DropDownMenu category={cereals} />
           <DropDownMenu category={rapeseed} />
           <DropDownMenu category={herbs} />
+          <DropDownMenu category={fertilizer} />
         </div>
         <div>Товар</div>
       </div>

@@ -1,11 +1,13 @@
 import React from "react";
 import FeedBackForm from "../components/FeedBackForm";
 import Modal from "./../components/Modal";
+import ProductItem from "../components/ProductItem";
+import { cereals } from "../data/category";
 
 const Main = () => {
   return (
     <div className=" bg-[url('/assets/img/pole.jpg')] bg-no-repeat bg-cover bg-center w-full h-screen">
-      <div className="flex flex-col items-center justify-center mx-10 bg-white opacity-95">
+      <div className="flex flex-col items-center justify-center mx-10 bg-white">
         <div className="p-2">
           <h2 className="text-3xl text-center">О нас</h2>
           <p className=" indent-8 mb-3 text-left">
@@ -45,6 +47,7 @@ const Main = () => {
         </div>
         <div>
           <h2 className=" text-2xl text-center">Продукция</h2>
+          <ProductItem category={cereals}/>
         </div>
         <div className="w-[50%] text-center">
           <Modal title="Обратная связь" btnText="Напишите нам"><FeedBackForm /> </Modal>

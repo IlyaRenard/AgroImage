@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DropDownMenu from "../components/DropDownMenu";
 import { cereals, corn, herbs, rapeseed, soya } from "../data/category";
+import FeedBackForm from "../components/FeedBackForm";
 
 const Products = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {IonIcon} from "react-ion-icon";
+import { IonIcon } from "react-ion-icon";
 
 const Header = () => {
   const links = [
@@ -17,20 +17,20 @@ const Header = () => {
   };
 
   return (
-    <div className="shadow-md w-full static top-0 left-0">
-      <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-4 md:px-10 px-7">
+    <div className="shadow-md drop-shadow-2xl w-full static  top-0 left-0 ">
+      <div className="flex md:items-center md:justify-between content-start bg-gradient-to-r bg-white opacity-90 py-4 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800 ">
           <span className="mr-1 pt-2">
             <img
               src=".\logo.png"
-              className="mr-3 h-13 sm:h-14"
+              className="mr-3 max-h-12 w-max-12 "
               alt="AgroImage"
             />
           </span>
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-[-1] bg-transparent z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
           transition-all duration-500 ease-in ${
             open ? "top-20 " : "top-[-490px]"
           }`}
@@ -39,7 +39,7 @@ const Header = () => {
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
               <a
                 href={link.link}
-                className="text-gray-800 hover:text-gray-400 duration-500"
+                className="text-gray-800 hover:text-green-600 duration-500"
               >
                 {link.name}
               </a>

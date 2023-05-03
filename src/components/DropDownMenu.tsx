@@ -17,7 +17,6 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
       <ul className="flex flex-col mr-4">
         <li>
           <a
-            href="/"
             onClick={clickHandler}
             className="text-xl cursor-pointer hover:font-bold "
           >

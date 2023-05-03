@@ -1,13 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import FeedBackForm from "../components/FeedBackForm";
+import PreviewProduct from "../components/PreviewProduct";
+import {  allCategories } from "../data/category";
 import Modal from "./../components/Modal";
-import ProductItem from "../components/ProductItem";
-import { cereals } from "../data/category";
 
 const Main = () => {
+  const [categorys, setCategory] = useState(allCategories)
   return (
-    <div className=" bg-[url('/assets/img/pole.jpg')]  bg-no-repeat bg-cover bg-center w-full h-screen">
-      <div className="flex flex-col items-center justify-center absolute drop-shadow-2xl top-96 md:top-80 bg-opacity-90 rounded-xl mx-10 bg-white">
+    <div className="bg-[url('/assets/img/pole.jpg')] bg-fixed  bg-no-repeat bg-cover bg-center w-full h-screen">
+      <div>
+      <div className="flex flex-col items-center justify-center absolute  drop-shadow-2xl top-96 md:top-80 bg-opacity-90 rounded-xl mx-10 bg-white">
         <div className="p-2">
           <h2 className="text-3xl text-center">О нас</h2>
           <p className=" indent-8 mb-3 text-left">
@@ -47,13 +49,25 @@ const Main = () => {
         </div>
         <div>
           <h2 className=" text-2xl text-center">Продукция</h2>
-          <ProductItem category={cereals}/>
+          <div className="flex md:flex-row flex-col flex-wrap">
+            {categorys.map(category=> <PreviewProduct category={category} />)}
+            
+          </div>
         </div>
         <div className="w-[50%] text-center">
-          <Modal title="Обратная связь" btnText="Напишите нам"><FeedBackForm /> </Modal>
-          
+          <Modal title="Обратная связь" btnText="Напишите нам">
+            <FeedBackForm />
+          </Modal>
         </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2364.2554508463068!2d23.868176376700053!3d53.660246872382004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dfd654c38c2d6b%3A0xf2456d3e371d063!2z0YPQuy4g0J_QvtC90LXQvNGD0L3RjNGB0LrQsNGPIDIwLCDQk9GA0L7QtNC90L4gMjMwMDAz!5e0!3m2!1sru!2sby!4v1681811529648!5m2!1sru!2sby"
+          className=" border-0 w-full h-[500px] m-3 p-2"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
+      </div>
+      
     </div>
   );
 };

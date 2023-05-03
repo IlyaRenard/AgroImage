@@ -30,7 +30,7 @@ const Header = () => {
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-[-1] bg-transparent z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-[-1] bg-white z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
           transition-all duration-500 ease-in ${
             open ? "top-20 " : "top-[-490px]"
           }`}

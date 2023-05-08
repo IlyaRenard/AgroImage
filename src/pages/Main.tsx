@@ -50,7 +50,7 @@ const Main = () => {
         <div>
           <h2 className=" text-2xl text-center">Продукция</h2>
           <div className="flex md:flex-row flex-col flex-wrap">
-            {categorys.map(category=> <PreviewProduct category={category} />)}
+            {categorys.map(category=> <PreviewProduct category={category} key={category.id} />)}
             
           </div>
         </div>

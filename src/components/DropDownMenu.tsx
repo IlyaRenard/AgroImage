@@ -13,7 +13,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
   };
 
   return (
-    <div>
+    <div className="m-2 w-full">
       <ul className="flex flex-col mr-4">
         <li>
           <a
@@ -25,7 +25,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
           {open && (
             <ul>
               {category.subCategory?.map((value) => (
-                <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer">
+                <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer" key={category.id}>
                   {value}
                 </li>
               ))}

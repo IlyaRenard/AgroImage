@@ -1,11 +1,15 @@
 import React, { FC, HtmlHTMLAttributes, PropsWithChildren } from "react";
 
-interface ModalProps extends HtmlHTMLAttributes<HTMLDivElement>{
-    title:string
-    btnText:string
+interface ModalProps extends HtmlHTMLAttributes<HTMLDivElement> {
+  title: string;
+  btnText: string;
 }
 
-const Modal:FC<PropsWithChildren<ModalProps>> = ({children,title,btnText}) => {
+const Modal: FC<PropsWithChildren<ModalProps>> = ({
+  children,
+  title,
+  btnText,
+}) => {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
@@ -30,16 +34,12 @@ const Modal:FC<PropsWithChildren<ModalProps>> = ({children,title,btnText}) => {
                     onClick={() => setShowModal(false)}
                   >
                     <span className="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
-                    x
+                      x
                     </span>
                   </button>
                 </div>
                 {/*body*/}
-                <div className="relative p-6 flex-auto">
-                    {children}
-                </div>
-            
-           
+                <div className="relative p-6 flex-auto">{children}</div>
               </div>
             </div>
           </div>

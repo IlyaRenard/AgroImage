@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 import { ICategory } from "../models/product";
+import { NavLink } from "react-router-dom";
 
 interface DropDownMenuProps {
   category: ICategory;
@@ -16,18 +17,23 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
     <div className="m-2 w-full">
       <ul className="flex flex-col mr-4">
         <li>
-          <a
+          <p
             onClick={clickHandler}
             className="text-xl cursor-pointer hover:font-bold "
           >
             {category.category}
-          </a>
+          </p>
           {open && (
             <ul>
               {category.subCategory?.map((value) => (
-                <li className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer" key={category.id}>
-                  {value}
-                </li>
+                <NavLink to={`/products/category/${value}`} key={value}>
+                  <li
+                    className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer w-max"
+                    key={value}
+                  >
+                    {value}
+                  </li>
+                </NavLink>
               ))}
             </ul>
           )}

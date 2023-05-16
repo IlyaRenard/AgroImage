@@ -17,13 +17,13 @@ const Header = () => {
   };
 
   return (
-    <div className="shadow-md drop-shadow-2xl w-full static  top-0 left-0 ">
-      <div className="flex md:items-center md:justify-between content-start bg-gradient-to-r bg-white opacity-90 py-4 md:px-10 px-7">
+    <div className="shadow-md drop-shadow-2xl w-full  bg-opacity-90">
+      <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-1 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800 ">
-          <span className="mr-1 pt-2">
+          <span className="mr-1 pt-1">
             <img
               src=".\logo.png"
-              className="mr-3 max-h-12 w-max-12 "
+              className="mr-1 max-h-20 w-max-20 "
               alt="AgroImage"
             />
           </span>
@@ -67,7 +67,7 @@ const Header = () => {
 
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg md:w-full box-border block  pl-10 p-2"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg md:w-full w-[80%] box-border block  pl-10 p-2"
               placeholder="Поиск..."
               required
             />
@@ -75,7 +75,7 @@ const Header = () => {
         </form>
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+          className="text-3xl absolute right-4 top-7 cursor-pointer md:hidden"
         >
           <IonIcon name={open ? "close" : "menu"} />
         </div>

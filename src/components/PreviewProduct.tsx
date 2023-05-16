@@ -8,10 +8,15 @@ interface PreviewProductProps {
 
 const PreviewProduct: FC<PreviewProductProps> = ({ category }) => {
   return (
-    <div className="relative rounded-full bg-[url('/assets/img/pole.jpg')]  hover:scale-105 hover:bg-green-600 hover:bg-[url('/assets/img/phenica.png')] w-[200px] h-[200px] m-3">
+    <div
+      className="relative rounded-full bg-cover border-2 hover:scale-105 hover:bg-green-600 hover:bg-[url('/assets/img/phenica.png')] w-[200px] h-[200px] m-3"
+      style={{
+        backgroundImage: `url(${category.img})`,
+      }}
+    >
       <NavLink to={`/products/category/${category.category}`} key={category.id}>
         <div>
-          <h2 className="transition absolute top-1/3 right-0 left-0 bottom-0 text-white p-3 text-center uppercase hover:scale-110 hover:-translate-y-1 cursor-pointer">
+          <h2 className="transition absolute top-1/3 right-0 left-0 bottom-0 text-white font-bold p-3 text-2xl  text-center uppercase hover:scale-110 hover:-translate-y-1 cursor-pointer">
             {category.category}
           </h2>
         </div>

@@ -38,7 +38,7 @@ const Products = () => {
     <div>
       <div className="flex flex-row mt-5">
         <div className="border-r-2 m-2 w-auto">
-          <h1 className=" text-2xl border-b-2 m-2">Категории</h1>
+          <h1 className=" text-2xl border-b-2 border-green-600 m-2">Категории</h1>
           {categories.map((category) => (
             <DropDownMenu category={category} key={category.id} />
           ))}
@@ -55,7 +55,7 @@ const Products = () => {
           )}
 
           {!filteredList.length ? (
-            <h1 className="text-center text-xl mt-20">Товары не найдены!</h1>
+            <h1 className="text-center text-xl mt-20">Товары не найдены :(</h1>
           ) : (
             <div className="flex flex-row flex-wrap justify-around items-center">
               {filteredList.map((product) => (

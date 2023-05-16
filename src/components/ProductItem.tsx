@@ -19,7 +19,7 @@ const ProductItem: FC<ProductItemProps> = ({ product }) => {
       </div>
       <div className="absolute bottom-0 w-full bg-green-600 bg-opacity-90 rounded-b-lg">
         
-          <span className=" font-bold text-2xl text-center">
+          <span className=" font-bold text-2xl text-center text-white">
             {product.title}
           </span>
        

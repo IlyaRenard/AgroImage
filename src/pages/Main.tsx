@@ -8,52 +8,52 @@ const Main = () => {
   const [categorys] = useState(allCategories);
   return (
     <div>
-      <div className="bg-[url('/assets/img/pole.jpg')] bg-no-repeat bg-cover bg-center w-full h-screen">
-        <div className="flex flex-col items-center justify-center absolute  drop-shadow-2xl top-96 md:top-80 bg-opacity-90 rounded-xl mx-10 bg-white">
-          <div className="p-2">
-            <h2 className="text-3xl text-center">О нас</h2>
-            <p className=" indent-8 mb-3 text-left">
-              Добро пожаловать на главную страницу ООО АгроИмидж, вашего
-              надежного дистрибьютора высококачественных семян и удобрений.
-            </p>
-            <p className=" indent-8 mb-3 text-left">
-              Мы специализируемся на предоставлении широкого ассортимента
-              продукции, включая семена кукурузы, зерновых культур, рапса, сои,
-              травосмесей, микро-и макроудобрения. Несмотря на то, что мы
-              молодая компания, имеющая всего трехлетний опыт работы, у нас уже
-              есть хорошая репутация на рынке. Мы очень гордимся нашим
-              исключительным обслуживанием клиентов, высоким качеством продукции
-              и конкурентоспособными ценами.
-            </p>
-            <p className=" indent-8 mb-3 text-left">
-              Мы тесно сотрудничаем с нашими партнерами, такими как SaatBau,
-              Rapul Moldavian selection, Maysadur, Green и различные российские
-              компании, таким образом гарантируя, что у нас всегда будут лучшие
-              товары. Наши партнерские отношения также позволяют нам постоянно
-              расширять ассортимент нашей продукции и быть в курсе последних
-              тенденций в отрасли.
-            </p>
-            <p className=" indent-8 mb-3 text-left">
-              В компании АгроИмидж каждый сотрудник верит, что сельское
-              хозяйство является основой любой экономики, и мы желаем внести
-              свой вклад в развитие сельскохозяйственного сектора нашей страны.
-              Являетесь ли вы фермером, дистрибьютором или поставщиком товаров,
-              мы здесь для того, чтобы предоставить вам лучшие продукты и
-              услуги, которые помогут вам достичь ваших целей.
-            </p>
-            <p className=" indent-8 mb-3 text-left">
-              Благодарим вас за то, что вы выбрали AgroImage в качестве своего
-              партнера в сельском хозяйстве. Мы с нетерпением ждем возможности
-              сотрудничать с вами!
-            </p>
-          </div>
+      <div className="bg-[url('/assets/img/pole.jpg')] bg-no-repeat bg-cover bg-center w-full h-screen"></div>
+
+      <div className="flex flex-col items-center justify-center  drop-shadow-2xl  bg-white">
+        <div className="p-2">
+          <h2 className="text-3xl text-center">О нас</h2>
+          <p className=" indent-8 mb-3 text-left text-xl">
+            Добро пожаловать на главную страницу ООО АгроИмидж, вашего надежного
+            дистрибьютора высококачественных семян и удобрений.
+          </p>
+          <p className=" indent-8 mb-3 text-left text-xl">
+            Мы специализируемся на предоставлении широкого ассортимента
+            продукции, включая семена кукурузы, зерновых культур, рапса, сои,
+            травосмесей, микро-и макроудобрения. Несмотря на то, что мы молодая
+            компания, имеющая всего трехлетний опыт работы, у нас уже есть
+            хорошая репутация на рынке. Мы очень гордимся нашим исключительным
+            обслуживанием клиентов, высоким качеством продукции и
+            конкурентоспособными ценами.
+          </p>
+          <p className=" indent-8 mb-3 text-left text-xl">
+            Мы тесно сотрудничаем с нашими партнерами, такими как SaatBau, Rapul
+            Moldavian selection, Maysadur, Green и различные российские
+            компании, таким образом гарантируя, что у нас всегда будут лучшие
+            товары. Наши партнерские отношения также позволяют нам постоянно
+            расширять ассортимент нашей продукции и быть в курсе последних
+            тенденций в отрасли.
+          </p>
+          <p className=" indent-8 mb-3 text-left text-xl">
+            В компании АгроИмидж каждый сотрудник верит, что сельское хозяйство
+            является основой любой экономики, и мы желаем внести свой вклад в
+            развитие сельскохозяйственного сектора нашей страны. Являетесь ли вы
+            фермером, дистрибьютором или поставщиком товаров, мы здесь для того,
+            чтобы предоставить вам лучшие продукты и услуги, которые помогут вам
+            достичь ваших целей.
+          </p>
+          <p className=" indent-8 mb-3 text-left text-xl">
+            Благодарим вас за то, что вы выбрали AgroImage в качестве своего
+            партнера в сельском хозяйстве. Мы с нетерпением ждем возможности
+            сотрудничать с вами!
+          </p>
         </div>
       </div>
 
-      <div className="bg-[url('/assets/img/ground.jpg')] bg-no-repeat bg-cover bg-center w-full h-screen">
+      <div className="bg-[url('/assets/img/image.jpg')] bg-no-repeat bg-cover bg-center w-full h-screen">
         <div>
           <h2 className=" text-4xl text-center text-white">Продукция</h2>
-          <div className="flex md:flex-row flex-col flex-wrap justify-center">
+          <div className="flex flex-row flex-wrap justify-center">
             {categorys.map((category) => (
               <PreviewProduct category={category} key={category.id} />
             ))}

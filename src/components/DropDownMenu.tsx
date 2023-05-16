@@ -19,7 +19,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
         <li>
           <p
             onClick={clickHandler}
-            className="text-xl cursor-pointer hover:font-bold "
+            className="text-xl cursor-pointer hover:font-bold hover:text-green-600 m-1 "
           >
             {category.category}
           </p>
@@ -28,7 +28,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({ category }) => {
               {category.subCategory?.map((value) => (
                 <NavLink to={`/products/category/${value}`} key={value}>
                   <li
-                    className=" indent-4 hover:border-b-2 border-green-300 cursor-pointer w-max"
+                    className=" indent-4 hover:border-b-2 border-green-600 cursor-pointer w-max"
                     key={value}
                   >
                     {value}

@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { IonIcon } from "react-ion-icon";
+import { IProduct } from "../models/product";
+import { products } from "../data/products";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const links = [
@@ -10,14 +13,30 @@ const Header = () => {
   ];
 
   const [open, setOpen] = useState(false);
+  const [allProducts, setAllProducts] = useState<IProduct[]>(products);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearch, setIsSearch] = useState(false);
+
+  const searchingList = useMemo(getSearchedList, [searchQuery, allProducts]);
+
+  function getSearchedList() {
+    return allProducts.filter((product) =>
+      product.title.toLowerCase().includes(searchQuery)
+    );
+  }
 
   const clickHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Поиск");
+    setIsSearch(true);
+    console.log(searchingList);
+  };
+
+  const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
-    <div className="shadow-md drop-shadow-2xl w-full  bg-opacity-90">
+    <div className="shadow-md drop-shadow-2xl w-full  bg-opacity-90 z-[999999]">
       <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-1 md:px-10 px-7">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800 ">
           <span className="mr-1 pt-1">
@@ -69,10 +88,26 @@ const Header = () => {
               type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg md:w-full w-[80%] box-border block  pl-10 p-2"
               placeholder="Поиск..."
+              value={searchQuery}
+              onChange={searchHandler}
               required
             />
           </div>
         </form>
+        {isSearch && (
+          <div className="fixed top-24 right-10 bg-gray-400 w-[15%] z-[9999999]">
+            <ul>
+              {searchingList.map((product) => (
+                <li key={product.id} className="m-1 p-1">
+                  <NavLink to={`/products/${product.id}`}>
+                    {product.title}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-4 top-7 cursor-pointer md:hidden"

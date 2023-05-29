@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { IonIcon } from "react-ion-icon";
+import { NavLink } from "react-router-dom";
 import { IProduct } from "../models/product";
 import { products } from "../data/products";
-import { NavLink } from "react-router-dom";
+import { IonIcon } from "react-ion-icon";
 
 const Header = () => {
   const links = [
@@ -13,22 +13,22 @@ const Header = () => {
   ];
 
   const [open, setOpen] = useState(false);
-  const [allProducts, setAllProducts] = useState<IProduct[]>(products);
+  const [allProducts] = useState<IProduct[]>(products);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isSearch, setIsSearch] = useState(false);
 
-  const searchingList = useMemo(getSearchedList, [searchQuery, allProducts]);
+  const searchingList = useMemo(
+    () => getSearchedList(searchQuery, allProducts),
+    [searchQuery, allProducts]
+  );
 
-  function getSearchedList() {
-    return allProducts.filter((product) =>
-      product.title.toLowerCase().includes(searchQuery)
+  function getSearchedList(query: string, productList: IProduct[]) {
+    return productList.filter((product) =>
+      product.title.toLowerCase().includes(query.toLowerCase())
     );
   }
 
   const clickHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSearch(true);
-    console.log(searchingList);
   };
 
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,37 +36,36 @@ const Header = () => {
   };
 
   return (
-    <div className="shadow-md drop-shadow-2xl w-full  bg-opacity-90 z-[999999]">
-      <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-1 md:px-10 px-7">
-        <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800 ">
+    <header className="shadow-md drop-shadow-2xl w-full bg-opacity-90 z-50">
+      <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-1 md:px-10 px-7 z-50">
+        <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800">
           <span className="mr-1 pt-1">
             <img
-              src=".\logo.png"
-              className="mr-1 max-h-20 w-max-20 "
+              src="./logo.png"
+              className="mr-1 max-h-20 w-max-20"
               alt="AgroImage"
             />
           </span>
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-[-1] bg-white z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 
-          transition-all duration-500 ease-in ${
-            open ? "top-20 " : "top-[-490px]"
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open ? "top-20" : "top-[-490px]"
           }`}
         >
           {links.map((link) => (
             <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
-              <a
-                href={link.link}
+              <NavLink
+                to={link.link}
                 className="text-gray-800 hover:text-green-600 duration-500"
               >
                 {link.name}
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
 
-        <form className="flex items-center" onSubmit={clickHandler}>
+        <form className="flex items-center relative" onSubmit={clickHandler}>
           <div className="relative w-full">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -86,7 +85,7 @@ const Header = () => {
 
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg md:w-full w-[80%] box-border block  pl-10 p-2"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg md:w-full w-[80%] box-border block pl-10 p-2"
               placeholder="Поиск..."
               value={searchQuery}
               onChange={searchHandler}
@@ -94,11 +93,12 @@ const Header = () => {
             />
           </div>
         </form>
-        {isSearch && (
-          <div className="fixed top-24 right-10 bg-gray-400 w-[15%] z-[9999999]">
+
+        {searchQuery && (
+          <div className="fixed top-24 md:right-10 right-[50%] bg-gray-400 w-[20%] z-[9999999]">
             <ul>
               {searchingList.map((product) => (
-                <li key={product.id} className="m-1 p-1">
+                <li key={product.id} className="m-1 p-1" onClick={()=>setSearchQuery('')}>
                   <NavLink to={`/products/${product.id}`}>
                     {product.title}
                   </NavLink>
@@ -115,7 +115,7 @@ const Header = () => {
           <IonIcon name={open ? "close" : "menu"} />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

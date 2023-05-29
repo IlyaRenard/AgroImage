@@ -3,56 +3,46 @@ import Modal from "../components/Modal";
 import FeedBackForm from "../components/FeedBackForm";
 
 const About = () => {
-  const [company, setCompany] = useState(true);
-  const [partners, setPartners] = useState(false);
-  const [contacts, setContacts] = useState(false);
+  const [activeTab, setActiveTab] = useState("company");
 
-  const companyHandler = () => {
-    setCompany(true);
-    setPartners(false);
-    setContacts(false);
-  };
-
-  const partnersHandler = () => {
-    setCompany(false);
-    setPartners(true);
-    setContacts(false);
-  };
-
-  const contactsHandler = () => {
-    setCompany(false);
-    setPartners(false);
-    setContacts(true);
+  const handleTabChange = (tab: React.SetStateAction<string>) => {
+    setActiveTab(tab);
   };
 
   return (
     <div>
-      <h1 className=" text-2xl border-b-2 text-center">
+      <h1 className="mt-5 text-2xl border-b-2 text-center">
         О КОМПАНИИ «АгроЛайф»
       </h1>
       <div className="flex flex-row mt-5">
-        <div className=" border-r-2">
-          <ul className=" ml-3 min-w-[150px] flex flex-col ">
+        <div className="border-r-2">
+          <ul className="ml-3 min-w-[150px] flex flex-col">
             <li className="md:ml-8 text-xl md:my-0 my-7">
               <a
-                onClick={companyHandler}
-                className="text-gray-800 hover:text-green-400 duration-500 cursor-pointer"
+                onClick={() => handleTabChange("company")}
+                className={`text-gray-800 hover:text-green-400 duration-500 cursor-pointer ${
+                  activeTab === "company" ? "text-green-400" : ""
+                }`}
               >
                 О компании
               </a>
             </li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
               <a
-                onClick={partnersHandler}
-                className="text-gray-800 hover:text-green-400 duration-500 cursor-pointer"
+                onClick={() => handleTabChange("partners")}
+                className={`text-gray-800 hover:text-green-400 duration-500 cursor-pointer ${
+                  activeTab === "partners" ? "text-green-400" : ""
+                }`}
               >
                 Партнёры
               </a>
             </li>
             <li className="md:ml-8 text-xl md:my-0 my-7">
               <a
-                onClick={contactsHandler}
-                className="text-gray-800 hover:text-green-400 duration-500 cursor-pointer"
+                onClick={() => handleTabChange("contacts")}
+                className={`text-gray-800 hover:text-green-400 duration-500 cursor-pointer ${
+                  activeTab === "contacts" ? "text-green-400" : ""
+                }`}
               >
                 Контакты
               </a>
@@ -60,7 +50,7 @@ const About = () => {
           </ul>
         </div>
         <div className="p-5">
-          {company && (
+          {activeTab === "company" && (
             <div id="company">
               <p className=" indent-8 mb-3 text-left text-xl">
                 Добро пожаловать на главную страницу ООО АгроИмидж, вашего
@@ -111,9 +101,9 @@ const About = () => {
               </p>
             </div>
           )}
-          {partners && (
+          {activeTab === "partners" && (
             <div id="partners">
-              <p className=" indent-8 mb-3 text-left text-xl">
+              <p className="indent-8 mb-3 text-left text-xl">
                 Мы тесно сотрудничаем с нашими партнерами, такими как SaatBau,
                 Rapul Moldavian selection, Maysadur, Green и различные
                 российские компании, таким образом гарантируя, что у нас всегда
@@ -123,7 +113,7 @@ const About = () => {
               </p>
             </div>
           )}
-          {contacts && (
+          {activeTab === "contacts" && (
             <div id="contacts">
               <div>
                 <h1 className="  text-2xl text-center">
@@ -152,10 +142,9 @@ const About = () => {
                 </p>
               </div>
               <div className="ml-8">
-                {" "}
                 <Modal title="Обратная связь" btnText="Напишите нам">
-                  <FeedBackForm />{" "}
-                </Modal>{" "}
+                  <FeedBackForm />
+                </Modal>
               </div>
             </div>
           )}

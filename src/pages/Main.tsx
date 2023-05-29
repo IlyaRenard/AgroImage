@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import FeedBackForm from "../components/FeedBackForm";
 import PreviewProduct from "../components/PreviewProduct";
@@ -7,29 +8,40 @@ import { Carousel } from "@material-tailwind/react";
 
 const Main = () => {
   const [categorys] = useState(allCategories);
+
+  const renderCarouselImages = () => {
+    const images = [
+      {
+        src: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
+        alt: "image 1",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
+        alt: "image 2",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+        alt: "image 3",
+      },
+    ];
+
+    return images.map((image) => (
+      <img
+        key={image.src}
+        src={image.src}
+        alt={image.alt}
+        className="h-full w-full object-cover"
+      />
+    ));
+  };
+
   return (
     <div>
-      <div className="h-screen ">
-        <Carousel className="rounded-xl ">
-          <img
-            src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-            alt="image 1"
-            className="h-full w-full  object-cover"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-            alt="image 2"
-            className=" h-full w-full object-cover"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-            alt="image 3"
-            className="h-full w-full object-cover"
-          />
-        </Carousel>
+      <div className="h-screen">
+        <Carousel className="rounded-xl">{renderCarouselImages()}</Carousel>
       </div>
 
-      <div className="flex flex-col items-center justify-center  drop-shadow-2xl  bg-white">
+      <div className="flex flex-col items-center justify-center drop-shadow-2xl bg-white">
         <div className="p-2">
           <h2 className="text-3xl text-center">О нас</h2>
           <p className=" indent-8 mb-3 text-left text-xl">
@@ -71,7 +83,7 @@ const Main = () => {
 
       <div className="bg-[url('/assets/img/image.jpg')] bg-no-repeat md:overflow-visible overflow-scroll bg-cover bg-center w-full h-auto">
         <div className="">
-          <h2 className=" text-4xl text-center text-white box-border">
+          <h2 className="text-4xl text-center text-white box-border">
             Продукция
           </h2>
           <div className="flex flex-row flex-wrap justify-center box-border">
@@ -89,7 +101,7 @@ const Main = () => {
       <div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2364.2554508463068!2d23.868176376700053!3d53.660246872382004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dfd654c38c2d6b%3A0xf2456d3e371d063!2z0YPQuy4g0J_QvtC90LXQvNGD0L3RjNGB0LrQsNGPIDIwLCDQk9GA0L7QtNC90L4gMjMwMDAz!5e0!3m2!1sru!2sby!4v1681811529648!5m2!1sru!2sby"
-          className=" border-0 w-full h-[400px] m-0 p-2"
+          className="border-0 w-full h-[400px] m-0 p-2"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>

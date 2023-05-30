@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <header className="shadow-md drop-shadow-2xl w-full bg-opacity-90 z-50">
-      <div className="flex md:items-center md:justify-between content-start bg-white opacity-90 py-1 md:px-10 px-7 z-50">
+      <div className="flex md:items-center md:justify-between content-start bg-white  py-1 md:px-10 px-7 z-50">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800">
           <span className="mr-1 pt-1">
             <img
@@ -50,11 +50,15 @@ const Header = () => {
 
         <ul
           className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-            open ? "top-20" : "top-[-490px]"
+            open ? "top-24" : "top-[-490px]"
           }`}
         >
           {links.map((link) => (
-            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+            <li
+              key={link.name}
+              className="md:ml-8 text-xl md:my-0 my-7"
+              onClick={() => setOpen(false)}
+            >
               <NavLink
                 to={link.link}
                 className="text-gray-800 hover:text-green-600 duration-500"
@@ -95,10 +99,14 @@ const Header = () => {
         </form>
 
         {searchQuery && (
-          <div className="fixed top-24 md:right-10 right-[50%] bg-gray-400 w-[20%] z-[9999999]">
+          <div className="absolute top-24 md:right-10 right-[50%] rounded-b-sm bg-gray-300 w-[20%] z-50">
             <ul>
               {searchingList.map((product) => (
-                <li key={product.id} className="m-1 p-1" onClick={()=>setSearchQuery('')}>
+                <li
+                  key={product.id}
+                  className="m-1 p-1"
+                  onClick={() => setSearchQuery("")}
+                >
                   <NavLink to={`/products/${product.id}`}>
                     {product.title}
                   </NavLink>

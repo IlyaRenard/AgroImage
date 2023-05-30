@@ -1,47 +1,20 @@
-import React from "react";
 import { useState } from "react";
 import FeedBackForm from "../components/FeedBackForm";
 import PreviewProduct from "../components/PreviewProduct";
 import { allCategories } from "../data/category";
+import CarouselImages from "./../components/CarouselImages";
 import Modal from "./../components/Modal";
-import { Carousel } from "@material-tailwind/react";
 
 const Main = () => {
   const [categorys] = useState(allCategories);
 
-  const renderCarouselImages = () => {
-    const images = [
-      {
-        src: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80",
-        alt: "image 1",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-        alt: "image 2",
-      },
-      {
-        src: "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-        alt: "image 3",
-      },
-    ];
-
-    return images.map((image) => (
-      <img
-        key={image.src}
-        src={image.src}
-        alt={image.alt}
-        className="h-full w-full object-cover"
-      />
-    ));
-  };
-
   return (
     <div>
-      <div className="h-screen">
-        <Carousel className="rounded-xl">{renderCarouselImages()}</Carousel>
-      </div>
+      {<div className="h-screen relative z-10">
+        <CarouselImages />
+      </div>}
 
-      <div className="flex flex-col items-center justify-center drop-shadow-2xl bg-white">
+      <div className="flex flex-col items-center justify-center ">
         <div className="p-2">
           <h2 className="text-3xl text-center">О нас</h2>
           <p className=" indent-8 mb-3 text-left text-xl">

@@ -8,19 +8,22 @@ import Products from "./pages/Products";
 
 function App() {
   return (
-    <>
-      <Header />
-
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDeatils />} />
-        <Route path="/products/category/:category" element={<Products />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+    <div>
+      <header>
+        <Header />
+      </header>
+      <div>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDeatils />} />
+          <Route path="/products/category/:category" element={<Products />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

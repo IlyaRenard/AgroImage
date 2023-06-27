@@ -1,6 +1,6 @@
-import React, { FC, useState } from "react";
-import { ICategory } from "../models/product";
+import { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ICategory } from "../models/product";
 
 interface DropDownMenuProps {
   category: ICategory;

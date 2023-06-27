@@ -14,7 +14,7 @@ const About = () => {
       <h1 className="mt-5 text-2xl border-b-2 text-center">
         О КОМПАНИИ «АгроЛайф»
       </h1>
-      <div className="flex flex-row mt-5">
+      <div className="flex flex-row mt-5 h-screen">
         <div className="border-r-2">
           <ul className="ml-3 min-w-[150px] flex flex-col">
             <li className="md:ml-8 text-xl md:my-0 my-7">

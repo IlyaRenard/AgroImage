@@ -1,5 +1,4 @@
-import { Carousel } from '@material-tailwind/react'
-import React from 'react'
+import { Carousel } from '@material-tailwind/react';
 
 const CarouselImages = () => {
     const renderCarouselImages = () => {
@@ -29,7 +28,7 @@ const CarouselImages = () => {
       };
     
   return (
-    <Carousel className="relative z-10" autoplay={true} loop={true}>{renderCarouselImages()}</Carousel>
+    <Carousel className="!static z-10" loop={true}>{renderCarouselImages()}</Carousel>
   )
 }
 

@@ -16,8 +16,10 @@ const ProductDeatils = () => {
     setAllProducts(products);
   }, []);
 
+  console.log(currentProduct?.image);
+
   return (
-    <div className="flex flex-row mt-5">
+    <div className="flex flex-row mt-5 h-screen">
       <div className="border-r-2 m-2 w-auto md:block hidden">
         <h1 className=" text-2xl border-b-2 border-green-600 m-2">Категории</h1>
         {categories.map((category) => (
@@ -30,10 +32,17 @@ const ProductDeatils = () => {
         </h2>
         <div className="flex md:flex-row flex-col">
           <div className="m-2 p-2 bg-gray-400">
-            <img
-              src="https://cdn2.thecatapi.com/images/qg0_IodJp.png"
-              className="rounded-sm max-w-[300px] "
-            />
+            {!currentProduct?.image ? (
+              <img
+                src="https://cdn2.thecatapi.com/images/qg0_IodJp.png"
+                className="rounded-sm  max-w-[300px] h-full object-contain"
+              />
+            ) : (
+              <img
+                src={currentProduct.image}
+                className="rounded-sm  max-w-[300px] h-full object-contain"
+              />
+            )}
           </div>
           <div className=" p-2">
             <span>{currentProduct?.description}</span>

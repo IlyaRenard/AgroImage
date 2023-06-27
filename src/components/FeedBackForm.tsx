@@ -1,5 +1,3 @@
-import React from "react";
-
 const FeedBackForm = () => {
   const sBord: string = " border-2 border-solid border-gray-300 ";
   return (

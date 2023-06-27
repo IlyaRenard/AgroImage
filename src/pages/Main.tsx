@@ -10,7 +10,7 @@ const Main = () => {
 
   return (
     <div>
-      {<div className="h-screen relative z-10">
+      {<div className="h-screen !static z-10">
         <CarouselImages />
       </div>}
 

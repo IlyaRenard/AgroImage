@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { IProduct } from "../models/product";
-import { products } from "../data/products";
 import { IonIcon } from "react-ion-icon";
+import { NavLink } from "react-router-dom";
+import { products } from "../data/products";
+import { IProduct } from "../models/product";
 
 const Header = () => {
   const links = [
@@ -40,11 +40,13 @@ const Header = () => {
       <div className="flex md:items-center md:justify-between content-start bg-white  py-1 md:px-10 px-7 z-50">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800">
           <span className="mr-1 pt-1">
-            <img
-              src="./logo.png"
-              className="mr-1 max-h-20 w-max-20"
-              alt="AgroImage"
-            />
+            <a href="/">
+              <img
+                src="./logo.png"
+                className="mr-1 max-h-20 w-max-20"
+                alt="AgroImage"
+              />
+            </a>
           </span>
         </div>
 
@@ -99,12 +101,12 @@ const Header = () => {
         </form>
 
         {searchQuery && (
-          <div className="absolute top-24 md:right-10 right-[50%] rounded-b-sm bg-gray-300 w-[20%] z-50">
+          <div className="absolute top-24 md:right-10 right-[0] rounded-sm bg-gray-300 md:w-[20%] w-[80%]  md:mx-0 mx-1 z-50">
             <ul>
               {searchingList.map((product) => (
                 <li
                   key={product.id}
-                  className="m-1 p-1"
+                  className="m-1 p-1 bg-gray-200 rounded-sm"
                   onClick={() => setSearchQuery("")}
                 >
                   <NavLink to={`/products/${product.id}`}>

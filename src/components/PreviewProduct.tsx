@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { ICategory } from "../models/product";
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
+import { ICategory } from "../models/product";
 
 interface PreviewProductProps {
   category: ICategory;

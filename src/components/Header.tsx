@@ -42,7 +42,7 @@ const Header = () => {
           <span className="mr-1 pt-1">
             <a href="/">
               <img
-                src="./logo.png"
+                src="https://i.imgur.com/MDh3avS.png"
                 className="mr-1 max-h-20 w-max-20"
                 alt="AgroImage"
               />

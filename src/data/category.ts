@@ -3,28 +3,28 @@ import { ICategory } from "../models/product"
 export const corn: ICategory = {
     id: 1,
     category: "Кукуруза",
-    subCategory: ["Aвстрийской селекции", "Молдавской селекции", "Французской селекции"],
+    subCategory: ["Кукуруза"],
     img: "images/category/corn.jpg"
 }
 
-export const soya: ICategory = {
+export const bobovye: ICategory = {
     id: 2,
-    category: "Соя",
-    subCategory: ["Соя"],
+    category: "Бобовые",
+    subCategory: ["Соя","Подсолнечник","Горох"],
     img: "images/category/soya.jpg"
 }
 
 export const cereals: ICategory = {
     id: 3,
-    category: "Зерновые ",
-    subCategory: ["Пшеница озимая", "Пщеница яровая", "Озимая тритикале", "Рожь"],
+    category: "Зерновые",
+    subCategory: ["Пшеница озимая","Рожь озимая", "Ячмень озимая", "Пшеница яровая"],
     img: "images/category/zerno.jpg"
 }
 
 export const rapeseed: ICategory = {
     id: 4,
     category: "Рапс",
-    subCategory: ["Озимовый яровой"],
+    subCategory: ["Яровой рапс","Озимый рапс"],
     img: "images/category/raps.jpg"
 }
 
@@ -42,6 +42,6 @@ export const fertilizer: ICategory = {
     img: "images/category/udobr.jpg"
 }
 
-export const allCategories = [corn, soya, cereals, rapeseed, herbs, fertilizer]
+export const allCategories = [corn, bobovye, cereals, rapeseed, herbs, fertilizer]
 
 

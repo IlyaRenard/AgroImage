@@ -9,8 +9,8 @@ const Main = () => {
   const [categorys] = useState(allCategories);
 
   return (
-    <div>
-      {<div className="h-screen !static z-10">
+    <div className="px-24">
+      {<div className="h-screen !static z-10 w-full">
         <CarouselImages />
       </div>}
 

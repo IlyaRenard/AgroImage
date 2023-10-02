@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="shadow-md drop-shadow-2xl w-full bg-opacity-90 z-50">
+    <header className="relative shadow-md drop-shadow-2xl bg-opacity-90 w-full z-50">
       <div className="flex md:items-center md:justify-between content-start bg-white  py-1 md:px-10 px-7 z-50">
         <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-800">
           <span className="mr-1 pt-1">
@@ -109,7 +109,7 @@ const Header = () => {
                   className="m-1 p-1 bg-gray-200 rounded-sm"
                   onClick={() => setSearchQuery("")}
                 >
-                  <NavLink to={`/products/${product.id}`}>
+                  <NavLink to={`/${product.id}`}>
                     {product.title}
                   </NavLink>
                 </li>

@@ -28,7 +28,7 @@ const CarouselImages = () => {
       };
     
   return (
-    <Carousel className="!static z-10" loop={true}>{renderCarouselImages()}</Carousel>
+    <Carousel className="!static z-10" loop={true} autoplay={true}>{renderCarouselImages()}</Carousel>
   )
 }
 

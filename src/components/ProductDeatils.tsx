@@ -6,17 +6,14 @@ import { ICategory, IProduct } from "../models/product";
 import DropDownMenu from "./DropDownMenu";
 
 const ProductDeatils = () => {
-  const params = useParams();
-  const productId = params.id;
-  const currentProduct = products.find((val) => val.id === productId);
+  const { id } = useParams();
+  const currentProduct = products.find((val) => val.id === id);
   const [categories] = useState<ICategory[]>(allCategories);
   const [allProducts, setAllProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     setAllProducts(products);
   }, []);
-
-  console.log(currentProduct?.image);
 
   return (
     <div className="flex flex-row mt-5 h-screen">

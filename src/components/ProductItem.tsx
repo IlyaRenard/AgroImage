@@ -8,19 +8,19 @@ interface ProductItemProps {
 
 const ProductItem: FC<ProductItemProps> = ({ product }) => {
   return (
-    <div className=" max-w-[300px] m-3 text-center shadow-md bg-gray-200 cursor-pointer rounded-lg">
-      <NavLink to={`/products/${product.id}`}>
-        <div className="hover:p-0 relative p-1 h-[200px]">
+    <div className="md:w-[19%] w-[90%] m-3 text-center shadow-md bg-gray-200 cursor-pointer rounded-lg z-0">
+      <NavLink to={`/${product.id}`}>
+        <div className="hover:p-0 relative p-2 h-[200px]">
           {!product.image ? (
             <img
               src="https://cdn2.thecatapi.com/images/qg0_IodJp.png"
-              className="rounded-sm w-full h-full object-contain"
+              className="w-full h-full object-contain"
             />
           ) : (
-            <img src={product.image} className="rounded-sm w-full h-full object-contain" />
+            <img src={product.image} className="w-full h-full object-contain" />
           )}
         </div>
-        <div className=" bottom-0 w-full bg-green-600 rounded-b-lg z-10">
+        <div className=" bottom-0 w-full bg-green-600 rounded-b-lg">
           <span className=" font-bold text-2xl text-center text-white">
             {product.title}
           </span>

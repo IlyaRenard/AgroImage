@@ -14,9 +14,9 @@ const PreviewProduct: FC<PreviewProductProps> = ({ category }) => {
         backgroundImage: `url(${category.img})`,
       }}
     >
-      <NavLink to={`/products/category/${category.category}`} key={category.id}>
+      <NavLink to={`/category/${category.category}`} key={category.id}>
         <div>
-          <h2 className="transition absolute top-1/3 right-0 left-0 bottom-0 text-white font-bold p-3 text-2xl  text-center uppercase hover:scale-110 hover:-translate-y-1 cursor-pointer">
+          <h2 className="transition absolute top-1/3 right-0 left-0 bottom-0 text-gray-100 font-bold p-3 text-2xl  text-center uppercase hover:scale-110 hover:-translate-y-1 cursor-pointer">
             {category.category}
           </h2>
         </div>

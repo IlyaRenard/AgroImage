@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import DropDownMenu from "../components/DropDownMenu";
 import { allCategories } from "../data/category";
 import { ICategory, IProduct } from "../models/product";
@@ -35,7 +35,7 @@ const Products = () => {
   }
 
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-scroll z-0">
       <div className="flex flex-row mt-5">
         <div className="border-r-2 m-2 w-auto">
           <h1 className=" text-2xl border-b-2 border-green-600 m-2">
@@ -59,7 +59,7 @@ const Products = () => {
           {!filteredList.length ? (
             <h1 className="text-center text-xl mt-20">Товары не найдены :( </h1>
           ) : (
-            <div className="flex flex-row flex-wrap  items-center">
+            <div className="flex md:flex-row flex-col flex-wrap items-center  justify-center">
               {filteredList.map((product) => (
                 <ProductItem product={product} key={product.id} />
               ))}
